@@ -1,4 +1,5 @@
 import { Download, Star } from "lucide-react";
+import { useLang } from "../i18n";
 
 const items = [
   {
@@ -22,9 +23,10 @@ const items = [
 ];
 
 export default function Resources() {
+  const { t } = useLang();
   return (
     <section id="resources" className="max-w-7xl mx-auto px-4 py-12">
-      <h3 className="text-2xl font-bold text-emerald-100">Community Resources</h3>
+      <h3 className="text-2xl font-bold text-emerald-100">{t("communityResources")}</h3>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {items.map((r) => (
           <div key={r.id} className="rounded-lg border border-emerald-800 bg-emerald-950/60 p-4">
@@ -37,7 +39,7 @@ export default function Resources() {
               <span className="ml-1 text-amber-300 text-sm">{r.rating.toFixed(1)}</span>
             </div>
             <button className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 text-emerald-50 font-medium border border-emerald-300/20">
-              <Download size={18} /> Download
+              <Download size={18} /> {t("download")}
             </button>
           </div>
         ))}
