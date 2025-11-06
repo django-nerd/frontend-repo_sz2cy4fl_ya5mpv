@@ -1,32 +1,24 @@
-import Spline from "@splinetool/react-spline";
-import { useLang } from "../i18n";
+import React from 'react';
+import Spline from '@splinetool/react-spline';
+import { useLang } from '../i18n';
 
 export default function Hero() {
   const { t } = useLang();
+
   return (
-    <section className="relative h-[60vh] min-h-[420px] w-full bg-gradient-to-b from-emerald-900 via-emerald-950 to-black">
+    <section id="home" className="relative h-[70vh] min-h-[480px] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <Spline
-          scene="https://prod.spline.design/qe3r2xk9eLNKM2xw/scene.splinecode"
-          style={{ width: "100%", height: "100%" }}
-        />
+        <Spline scene="https://prod.spline.design/2r5J0-Placeholder/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-emerald-950/30 to-black/80 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/40 via-white/10 to-white/80" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col items-start justify-end pb-10">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-emerald-100 drop-shadow">
-          {t("welcome")}
-        </h2>
-        <p className="mt-3 text-emerald-200/90 max-w-xl">
-          {t("heroText")}
-        </p>
-        <div className="mt-6 flex gap-3">
-          <a href="#chat" className="px-4 py-2 rounded-md bg-emerald-600 hover:bg-emerald-500 text-emerald-50 font-semibold border border-emerald-300/20 shadow">
-            {t("startChat")}
-          </a>
-          <a href="#forum" className="px-4 py-2 rounded-md bg-emerald-800/60 hover:bg-emerald-700/60 text-emerald-100 font-semibold border border-emerald-300/20">
-            {t("exploreForum")}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 h-full flex flex-col items-start justify-center">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 drop-shadow-sm">{t('hero.title')}</h1>
+        <p className="mt-4 max-w-2xl text-gray-700 text-base md:text-lg">{t('hero.subtitle')}</p>
+        <div className="mt-6">
+          <a href="#chat" className="inline-flex items-center rounded-md bg-black text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-900 transition">
+            {t('hero.cta')}
           </a>
         </div>
       </div>
